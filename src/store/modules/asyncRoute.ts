@@ -13,7 +13,7 @@ export const useAsyncRoute = defineStore({
   id: 'app-async-route',
   state: (): AsyncRoute => ({
     accessRoutes: [],
-    isAdded: false
+    isAdded: false,
   }),
   getters: {},
   actions: {
@@ -45,7 +45,7 @@ export const useAsyncRoute = defineStore({
       const routeFilter = (route: RouteRecordRaw) => {
         const { meta } = route;
         // 路由不需要权限验证
-        if (!meta || !meta.auth) {
+        if (!meta || meta.noAuth) {
           return true;
         }
         // 权限验证
@@ -70,6 +70,6 @@ export const useAsyncRoute = defineStore({
       this.accessRoutes = routeListFliter(asyncRouteList);
       this.isAdded = true;
       return this.accessRoutes;
-    }
-  }
+    },
+  },
 });

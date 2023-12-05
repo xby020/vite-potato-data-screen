@@ -90,6 +90,6 @@ export default defineConfig({
   },
 
   shortcuts: {
-    'text-primary': 'text-blue dark:text-blue-dark',
+    'text-gradient-blue': 'text-transparent bg-clip-text bg-gradient-to-b from-[#63D2FF] to-[#BDF3FF]',
   },
 });

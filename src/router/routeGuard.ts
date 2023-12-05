@@ -17,7 +17,7 @@ export function createRouterGuards(router: Router) {
 
     // no need permission
     const { meta } = to;
-    if (meta.auth === false) {
+    if (meta.noAuth === true) {
       next();
       return;
     }

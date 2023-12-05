@@ -5,7 +5,7 @@ import Dayjs from 'dayjs';
 import { login, LoginParams, LoginUserInfo } from '@/api/user/login';
 
 export type User = {
-  info: LoginUserInfo;
+  info: Record<string, any>;
 };
 
 const user = dbGet<LoginUserInfo>({ path: 'user', user: true });
@@ -13,7 +13,7 @@ const user = dbGet<LoginUserInfo>({ path: 'user', user: true });
 export const useUserStore = defineStore({
   id: 'user',
   state: (): User => ({
-    info: user
+    info: user,
   }),
   getters: {},
   actions: {
@@ -50,6 +50,6 @@ export const useUserStore = defineStore({
     logout() {
       this.info = {} as LoginUserInfo;
       dbSet({ path: 'user', user: true, value: this.info });
-    }
-  }
+    },
+  },
 });

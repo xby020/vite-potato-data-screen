@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
       title: '数据大屏',
       icon: markRaw(IconRiDashboardFill),
       sort: 1,
-      auth: false,
+      noAuth: true,
     },
     children: [
       {
@@ -21,6 +21,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '数据大屏',
           icon: markRaw(IconRiDashboardFill),
+          noAuth: true,
         },
       },
       {
@@ -30,6 +31,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '数据大屏',
           icon: markRaw(IconRiDashboardFill),
+          noAuth: true,
         },
       },
     ],

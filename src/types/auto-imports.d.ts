@@ -14,6 +14,7 @@ declare global {
   const IconFluentDataBarVertical20Filled: typeof import('~icons/fluent/data-bar-vertical20-filled')['default']
   const IconMdiDatabaseEdit: typeof import('~icons/mdi/database-edit')['default']
   const IconMdiDatabaseEditOutline: typeof import('~icons/mdi/database-edit-outline')['default']
+  const IconMdiLogout: typeof import('~icons/mdi/logout')['default']
   const IconMdiViewDashboard: typeof import('~icons/mdi/view-dashboard')['default']
   const IconRiDashboardFill: typeof import('~icons/ri/dashboard-fill')['default']
   const IconTablerError404: typeof import('~icons/tabler/error404')['default']

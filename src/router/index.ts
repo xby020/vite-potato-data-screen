@@ -49,7 +49,7 @@ const constantRouteList: RouteRecordRaw[] = [
 // No Auth Route
 const noAuthRouteList: RouteRecordRaw[] = [];
 asyncRouteList.forEach((item) => {
-  if (item.meta?.auth === false) {
+  if (item.meta?.noAuth) {
     noAuthRouteList.push(item);
   }
 });

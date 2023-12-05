@@ -13,7 +13,7 @@
     </div>
 
     <!-- Title -->
-    <div class="relative z-3 font-jd text-3xl text-transparent bg-clip-text bg-gradient-to-b from-[#63D2FF] to-[#BDF3FF]">
+    <div class="relative z-3 font-jd text-3xl text-gradient-blue">
       {{ title }}
     </div>
   </div>

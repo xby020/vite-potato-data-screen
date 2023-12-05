@@ -312,6 +312,7 @@
     "useClipboardItems": true,
     "IconRiDashboardFill": true,
     "IconMdiDatabaseEdit": true,
-    "IconMdiDatabaseEditOutline": true
+    "IconMdiDatabaseEditOutline": true,
+    "IconMdiLogout": true
   }
 }
