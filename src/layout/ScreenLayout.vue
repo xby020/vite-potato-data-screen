@@ -1,10 +1,10 @@
 <template>
-  <div class="relative w-full h-full bg-slate-900 text-white">
+  <div class="relative w-screen h-screen bg-slate-900 text-white overflow-hidden">
     <!-- background/map -->
     <div class="absolute top-0 left-0 w-full h-full z-0"></div>
 
     <!-- dark corner -->
-    <div class="absolute z-1 top-0 left-0 w-full h-full pointer-events-none dark-corner pointer-events-none"></div>
+    <div class="absolute z-1 top-0 left-0 w-screen h-screen pointer-events-none dark-corner pointer-events-none"></div>
 
     <!-- content -->
     <div class="relative z-2 overflow-hidden transform-gpu content-scale flex flex-col justify-start items-center" :style="scaleStyle">
