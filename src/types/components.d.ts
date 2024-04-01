@@ -53,6 +53,7 @@ declare module 'vue' {
     NPopover: typeof import('naive-ui')['NPopover']
     NScrollbar: typeof import('naive-ui')['NScrollbar']
     NSpace: typeof import('naive-ui')['NSpace']
+    NSwitch: typeof import('naive-ui')['NSwitch']
     NTable: typeof import('naive-ui')['NTable']
     NText: typeof import('naive-ui')['NText']
     PageCard: typeof import('./../components/pages/PageCard.vue')['default']

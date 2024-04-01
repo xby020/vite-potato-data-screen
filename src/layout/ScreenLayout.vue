@@ -18,6 +18,8 @@
 <script setup lang="ts">
 import { useWindowSize } from '@vueuse/core';
 import ScreenLayoutMain from './components/ScreenLayoutMain.vue';
+import { useScreenStore } from '@/store/modules/screen';
+import { useMqttStore } from '@/store/modules/mqtt';
 
 // Physical screen size
 const screenWidth = ref(1920);
@@ -33,6 +35,51 @@ const scaleStyle = computed(() => {
     height: `${screenHeight.value}px`,
     transform: `scale(${wr}, ${hr})`,
   };
+});
+
+// data
+const dataLoopSec = ref(60);
+const screenStore = useScreenStore();
+const { refreshData } = screenStore;
+
+const dataReady = ref(false);
+
+const dataTimer = ref<NodeJS.Timeout | null>(null);
+
+onMounted(async () => {
+  try {
+    await refreshData();
+    dataReady.value = true;
+  } finally {
+    dataTimer.value = setInterval(async () => {
+      await refreshData();
+    }, 1000 * dataLoopSec.value);
+  }
+});
+
+onUnmounted(() => {
+  if (dataTimer.value) {
+    clearInterval(dataTimer.value);
+  }
+});
+
+// mqtt
+const mqttStore = useMqttStore();
+const { isConnected } = storeToRefs(mqttStore);
+
+const mqttReady = ref(false);
+watch(isConnected, (val) => {
+  if (val) {
+    mqttReady.value = true;
+  }
+});
+
+onMounted(() => {
+  const host = window.location.hostname;
+  // mqttStore.connect(host);
+  setTimeout(() => {
+    mqttReady.value = true;
+  }, 3 * 1000);
 });
 </script>
 

@@ -78,7 +78,9 @@ const editData = computed({
 const editLoading = ref(false);
 
 // handle edit save
-async function handleEditSave() {}
+async function handleEditSave() {
+  console.log(editData.value);
+}
 
 // handle date update
 async function getSavedData() {}

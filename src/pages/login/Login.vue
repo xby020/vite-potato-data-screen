@@ -96,7 +96,7 @@ async function submit() {
         loginLoading.value = false;
         if (res) {
           if (route.name === 'login') {
-            router.push('/');
+            router.push('/screen');
           } else {
             router.replace(toPath);
           }
