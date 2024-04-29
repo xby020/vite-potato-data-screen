@@ -101,8 +101,7 @@ const editDataLevel = computed(() => {
 
 const editTableList = computed(() => {
   if (editDataLevel.value === 2) {
-    const editList = Object.keys(editData.value?.data as Record<string, any>);
-    return editList;
+    return Object.keys(editData.value?.data as Record<string, any>);
   } else {
     return [];
   }
@@ -120,7 +119,7 @@ const editFormHeader = computed(() => {
       headers = Object.keys(sampleData);
     }
 
-    const formHeader = headers.map((header) => {
+    return headers.map((header) => {
       return {
         title: header,
         key: header,
@@ -134,8 +133,6 @@ const editFormHeader = computed(() => {
         },
       };
     });
-
-    return formHeader;
   }
 });
 

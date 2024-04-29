@@ -1,6 +1,11 @@
 <template>
   <div class="w-screen h-screen text-text dark:text-text-dark">
-    <n-config-provider :locale="zhCN" :date-locale="dateZhCN" :theme="systemTheme" :theme-overrides="isDark ? darkThemeOverrides : lightThemeOverrides">
+    <n-config-provider
+      :locale="zhCN"
+      :date-locale="dateZhCN"
+      :theme="systemTheme"
+      :theme-overrides="isDark ? darkThemeOverrides : lightThemeOverrides"
+    >
       <app-provider>
         <router-view></router-view>
       </app-provider>
@@ -10,13 +15,22 @@
 
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
-import { zhCN, dateZhCN, GlobalThemeOverrides, darkTheme, useOsTheme } from 'naive-ui';
+import {
+  zhCN,
+  dateZhCN,
+  GlobalThemeOverrides,
+  darkTheme,
+  useOsTheme,
+} from 'naive-ui';
 import { useSystemStore } from '@/store/modules/system';
 import config from '../package.json';
 import { colorPanel } from '@root/config/color';
 
 // logout app version
-console.log(`%c🥔app version: ${config.version}`, 'color: #35f0ec; font-size: 18px;background:#3f3f3f;border-radius:3px;text-align:center;padding:5px;');
+console.log(
+  `%c🥔app version: ${config.version}`,
+  'color: #35f0ec; font-size: 18px;background:#3f3f3f;border-radius:3px;text-align:center;padding:5px;',
+);
 
 // set Icon
 const iconPath = ref('/icon/logo.svg');

@@ -62,6 +62,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScreenDataCard: typeof import('./../components/screen/ScreenDataCard.vue')['default']
+    ScreenLoopList: typeof import('./../components/screen/components/ScreenLoopList.vue')['default']
     SugonVideo: typeof import('./../components/SugonVideo.vue')['default']
   }
 }

@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.1",
     "@kjgl77/datav-vue3": "^1.7.2",
     "@vueuse/head": "^1.3.1",
+    "@vueuse/motion": "^2.1.0",
     "axios": "^1.6.8",
     "dayjs": "^1.11.10",
     "echarts": "^5.5.0",
